@@ -329,5 +329,180 @@
 				"text": "MASTER CHICKEN: Bock-bock bocka!"
 			}
 		]
+	},
+	{
+		"id" : 2,
+		"subtitle": [
+		  {
+			"start": 8.78,
+			"end": 10.36,
+			"text": "NARRATOR: A Kung Fu Master"
+		  },
+		  {
+			"start": 11.88,
+			"end": 14.02,
+			"text": "NARRATOR: is prepared to train hard,"
+		  },
+		  {
+			"start": 16.08,
+			"end": 17.10,
+			"text": "NARRATOR: move fast,"
+		  },
+		  {
+			"start": 18.46,
+			"end": 19.64,
+			"text": "NARRATOR: be brave,"
+		  },
+		  {
+			"start": 23.607,
+			"end": 24.487,
+			"text": "NARRATOR: and above all,"
+		  },
+		  {
+			"start": 27.06,
+			"end": 28.44,
+			"text": "NARRATOR: be ready"
+		  },
+		  {
+			"start": 28.694,
+			"end": 29.654,
+			"text": "NARRATOR: for anything."
+		  },
+		  {
+			"start": 35.56,
+			"end": 36.36,
+			"text": "MASTER SHIFU: Perfect."
+		  },
+		  {
+			"start": 36.88,
+			"end": 37.58,
+			"text": "PO: Really?"
+		  },
+		  {
+			"start": 37.916,
+			"end": 38.416,
+			"text": "MASTER SHIFU: No."
+		  },
+		  {
+			"start": 38.758,
+			"end": 39.258,
+			"text": "MASTER SHIFU: Again!"
+		  },
+		  {
+			"start": 41.32,
+			"end": 42.66,
+			"text": "NARRATOR: But next January,"
+		  },
+		  {
+			"start": 42.86,
+			"end": 44.46,
+			"text": "NARRATOR: nothing can prepare him"
+		  },
+		  {
+			"start": 47.057,
+			"end": 49.477,
+			"text": "NARRATOR: for his greatest challenge yet."
+		  },
+		  {
+			"start": 51.56,
+			"end": 52.66,
+			"text": "LI: Yay!"
+		  },
+		  {
+			"start": 53.32,
+			"end": 55.28,
+			"text": "PO: Who are you?"
+		  },
+		  {
+			"start": 56.04,
+			"end": 57.42,
+			"text": "LI: I'm Li Shan."
+		  },
+		  {
+			"start": 57.96,
+			"end": 59.98,
+			"text": "LI: I'm looking for my son."
+		  },
+		  {
+			"start": 60.24,
+			"end": 61,
+			"text": "CROWD: [GASP]"
+		  },
+		  {
+			"start": 61.92,
+			"end": 63,
+			"text": "MR. PING: [GASP]"
+		  },
+		  {
+			"start": 63.16,
+			"end": 63.66,
+			"text": "PO: [GASP]"
+		  },
+		  {
+			"start": 64.1,
+			"end": 65.3,
+			"text": "PO: You lost your son?"
+		  },
+		  {
+			"start": 65.76,
+			"end": 66.54,
+			"text": "LI: Yes"
+		  },
+		  {
+			"start": 67.18,
+			"end": 69.62,
+			"text": "LI: Many years ago."
+		  },
+		  {
+			"start": 69.9,
+			"end": 71.02,
+			"text": "PO: I lost my father."
+		  },
+		  {
+			"start": 71.8,
+			"end": 73.54,
+			"text": "LI: I'm very sorry."
+		  },
+		  {
+			"start": 73.88,
+			"end": 74.94,
+			"text": "PO: Thank you."
+		  },
+		  {
+			"start": 77.64,
+			"end": 78.2,
+			"text": "LI: Well..."
+		  },
+		  {
+			"start": 79.16,
+			"end": 80.28,
+			"text": "LI: good luck to you."
+		  },
+		  {
+			"start": 80.92,
+			"end": 81.48,
+			"text": "PO: You too."
+		  },
+		  {
+			"start": 81.98,
+			"end": 83.58,
+			"text": "PO: I hope you find your son."
+		  },
+		  {
+			"start": 84.56,
+			"end": 86.96,
+			"text": "LI: And I hope you find your father."
+		  },
+		  {
+			"start": 94.82,
+			"end": 95.52,
+			"text": "CROWD: [GROAN]"
+		  },
+		  {
+			"start": 97.46,
+			"end": 110.42,
+			"text": "[music]"
+		  }
+		]
 	}
 ];
