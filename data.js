@@ -1,6 +1,7 @@
 ﻿var global_videos = [
 	{
 		"id" : 1,
+		"ytVideoId" : "fGPPfZIvtCw",
 		"subtitle" : [
 			{
 				"start": 10.28,
@@ -332,6 +333,7 @@
 	},
 	{
 		"id" : 2,
+		"ytVideoId" : "10r9ozshGVE",
 		"subtitle": [
 		  {
 			"start": 8.78,

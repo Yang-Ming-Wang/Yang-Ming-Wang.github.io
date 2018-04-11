@@ -1,5 +1,5 @@
 var youtubeExternalSubtitle,
-	urlVideoId = getAllUrlParams().id;
+	urlId = getAllUrlParams().id;
 
 //load Youtube IFrame Player API code asynchronously.
 (function (){
@@ -12,24 +12,46 @@ var youtubeExternalSubtitle,
 
 console.log("load script end");
 
-if (urlVideoId === undefined) {
+if (urlId === undefined) {
 	console.log("undefined id");
-	urlVideoId = 0;
-} else if (urlVideoId >= global_videos.length || urlVideoId < 0) {
+	urlId = 0;
+} else if (urlId >= global_videos.length || urlId < 0) {
 	console.log("inValid id");
-	urlVideoId = 0;
+	urlId = 0;
 } else {
-	console.log(urlVideoId);
+	console.log(urlId);
 }
 
-//supply subtitle by using 3rd party Js api https://github.com/siloor/youtube.external.subtitle
-youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById("player"), global_videos[urlVideoId].subtitle);
+// This function creates an <iframe> (and YouTube player)
+// after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('player', {
+		height: '400',
+		width: '50%',
+		videoId: global_videos[urlId].ytVideoId,
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		}
+	});
+}
+
+function onPlayerReady(event) {
+	//supply subtitle by using 3rd party Js api https://github.com/siloor/youtube.external.subtitle
+	youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById("player"), global_videos[urlId].subtitle);
+	//event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+	//event.target.playVideo();
+}
 
 //insert data into html <ul> element
 (function () {
 	var ulElement = document.getElementById("subtitleList"),
 		i, liElement,
-		video = global_videos[urlVideoId]; //video id
+		video = global_videos[urlId]; //video id
 	for (i = 0;i < video.subtitle.length;i++) {
 		liElement = document.createElement("li");
 		liElement.innerHTML = video.subtitle[i].text;
@@ -38,7 +60,15 @@ youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getEleme
 })();
 
 
-//source https://www.sitepoint.com/get-url-parameters-with-javascript/
+// source https://www.sitepoint.com/get-url-parameters-with-javascript/
+// Example usage of getAllUrlParams()
+
+// http://example.com/?product=shirt&color=blue&newuser&size=m
+// getAllUrlParams().product; // 'shirt'
+// getAllUrlParams().color; // 'blue'
+// getAllUrlParams().newuser; // true
+// getAllUrlParams().nonexistent; // undefined
+// getAllUrlParams('http://test.com/?a=abc').a; // 'abc'
 function getAllUrlParams(url) {
 
   // get query string from url (optional) or window
@@ -100,13 +130,3 @@ function getAllUrlParams(url) {
 
   return obj;
 }
-
-//Example of using getAllUrlParams()
-
-//http://example.com/?product=shirt&color=blue&newuser&size=m
-//getAllUrlParams().product; // 'shirt'
-//getAllUrlParams().color; // 'blue'
-//getAllUrlParams().newuser; // true
-//getAllUrlParams().nonexistent; // undefined
-//getAllUrlParams('http://test.com/?a=abc').a; // 'abc'
-
