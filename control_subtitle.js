@@ -1,16 +1,6 @@
 var youtubeExternalSubtitle,
-	urlId = getAllUrlParams().id;
-
-//load Youtube IFrame Player API code asynchronously.
-(function (){
-	var tag = document.createElement("script"),
-		firstScriptTag = document.getElementsByTagName("script")[0];
-	
-		tag.src = "https://www.youtube.com/iframe_api";
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-})();
-
-console.log("load script end");
+	urlId = getAllUrlParams().id,
+	player;
 
 if (urlId === undefined) {
 	console.log("undefined id");
@@ -22,9 +12,17 @@ if (urlId === undefined) {
 	console.log(urlId);
 }
 
+//load Youtube IFrame Player API code asynchronously.
+(function (){
+	var tag = document.createElement("script"),
+		firstScriptTag = document.getElementsByTagName("script")[0];
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+})();
+
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.
-var player;
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
 		height: '400',
@@ -35,11 +33,13 @@ function onYouTubeIframeAPIReady() {
 			'onStateChange': onPlayerStateChange
 		}
 	});
-}
-
-function onPlayerReady(event) {
 	//supply subtitle by using 3rd party Js api https://github.com/siloor/youtube.external.subtitle
 	youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById("player"), global_videos[urlId].subtitle);
+};
+
+
+function onPlayerReady(event) {
+	console.log("player ready");
 	//event.target.playVideo();
 }
 
