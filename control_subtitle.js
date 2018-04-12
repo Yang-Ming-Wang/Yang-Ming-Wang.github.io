@@ -1,5 +1,5 @@
-var	player, timeInterval, currentVideo,
-	currentCaptionIdx = 0;
+var	player, currentVideo,
+	timeInterval = null;
 
 
 (function () {
@@ -50,35 +50,36 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
 	switch (event.data) {
 		case YT.PlayerState.PLAYING:
-			console.log("start playing video");
-			timeInterval = setInterval(onTimeChange,1000);
+			if (timeInterval == null) {
+				timeInterval = setInterval(onTimeChange,500);
+			}
 			break;
 		case YT.PlayerState.PAUSED:
-			console.log("paused video");
 			clearInterval(timeInterval);
+			timeInterval = null;
 			break;
 		case YT.PlayerState.ENDED:
-			console.log("video end");
 			clearInterval(timeInterval);
+			timeInterval = null;
 			break;
 	}
 }
 
 function onTimeChange() {
-	var currentCap = currentVideo.subtitle[currentCaptionIdx],
-		subtitleLength = currentVideo.subtitle.length;
+	var	i, subtitle = currentVideo.subtitle,
+		subtitleLength = subtitle.length,
 		currentTime = player.getCurrentTime();
 
-	if (currentCap.start <= currentTime && currentTime <= currentCap.end) {
-		console.log("show caption time");
-		document.getElementById("video_caption").innerHTML = currentCap.text;
+	for (i = 0; i < subtitleLength; i++) {
+		if (subtitle[i].start <= currentTime && currentTime <= subtitle[i].end) {
+			break;
+		}
 	}
-	if (currentCap.end <= currentTime && currentCaptionIdx < subtitleLength - 1) {
-		currentCaptionIdx += 1;
-		console.log("change to next caption");
+	if (i == subtitleLength) {
 		document.getElementById("video_caption").innerHTML = "";
+	} else {
+		document.getElementById("video_caption").innerHTML = subtitle[i].text;
 	}
-	console.log(player.getCurrentTime());
 }
 
 //insert data into html <ul> element
