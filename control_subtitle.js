@@ -1,4 +1,4 @@
-var	player, currentVideo,
+var	player, currentVideo, previousCaption,
 	timeInterval = null;
 
 
@@ -17,6 +17,18 @@ var	player, currentVideo,
 	currentVideo = global_videos[urlId];
 })();
 
+//insert data into html <ul> element
+(function () {
+	var ulElement = document.getElementById("subtitleList"),
+		i, liElement;
+	for (i = 0;i < currentVideo.subtitle.length;i++) {
+		liElement = document.createElement("li");
+		liElement.innerHTML = currentVideo.subtitle[i].text;
+		liElement.setAttribute("id",i);
+		ulElement.insertBefore(liElement, null);
+	}
+	previousCaption = document.getElementById("0");
+})();
 
 //load Youtube IFrame Player API code asynchronously.
 (function (){
@@ -79,20 +91,11 @@ function onTimeChange() {
 		document.getElementById("video_caption").innerHTML = "";
 	} else {
 		document.getElementById("video_caption").innerHTML = subtitle[i].text;
+		previousCaption.style.color = "initial";
+		previousCaption = document.getElementById(i);
+		previousCaption.style.color = "red";
 	}
 }
-
-//insert data into html <ul> element
-(function () {
-	var ulElement = document.getElementById("subtitleList"),
-		i, liElement;
-	for (i = 0;i < currentVideo.subtitle.length;i++) {
-		liElement = document.createElement("li");
-		liElement.innerHTML = currentVideo.subtitle[i].text;
-		ulElement.insertBefore(liElement, null);
-	}
-})();
-
 
 // source https://www.sitepoint.com/get-url-parameters-with-javascript/
 // Example usage of getAllUrlParams()
