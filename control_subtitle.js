@@ -1,16 +1,22 @@
-var youtubeExternalSubtitle,
-	urlId = getAllUrlParams().id,
-	player;
+var	player, timeInterval, currentVideo,
+	currentCaptionIdx = 0;
 
-if (urlId === undefined) {
-	console.log("undefined id");
-	urlId = 0;
-} else if (urlId >= global_videos.length || urlId < 0) {
-	console.log("inValid id");
-	urlId = 0;
-} else {
-	console.log(urlId);
-}
+
+(function () {
+	var urlId = getAllUrlParams().id;
+
+	if (urlId === undefined) {
+		console.log("undefined id");
+		urlId = 0;
+	} else if (urlId >= global_videos.length || urlId < 0) {
+		console.log("inValid id");
+		urlId = 0;
+	} else {
+		console.log(urlId);
+	}
+	currentVideo = global_videos[urlId];
+})();
+
 
 //load Youtube IFrame Player API code asynchronously.
 (function (){
@@ -27,14 +33,12 @@ function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
 		height: '400',
 		width: '50%',
-		videoId: global_videos[urlId].ytVideoId,
+		videoId: currentVideo.ytVideoId,
 		events: {
 			'onReady': onPlayerReady,
 			'onStateChange': onPlayerStateChange
 		}
 	});
-	//supply subtitle by using 3rd party Js api https://github.com/siloor/youtube.external.subtitle
-	youtubeExternalSubtitle = new YoutubeExternalSubtitle.Subtitle(document.getElementById("player"), global_videos[urlId].subtitle);
 };
 
 
@@ -44,17 +48,46 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
-	//event.target.playVideo();
+	switch (event.data) {
+		case YT.PlayerState.PLAYING:
+			console.log("start playing video");
+			timeInterval = setInterval(onTimeChange,1000);
+			break;
+		case YT.PlayerState.PAUSED:
+			console.log("paused video");
+			clearInterval(timeInterval);
+			break;
+		case YT.PlayerState.ENDED:
+			console.log("video end");
+			clearInterval(timeInterval);
+			break;
+	}
+}
+
+function onTimeChange() {
+	var currentCap = currentVideo.subtitle[currentCaptionIdx],
+		subtitleLength = currentVideo.subtitle.length;
+		currentTime = player.getCurrentTime();
+
+	if (currentCap.start <= currentTime && currentTime <= currentCap.end) {
+		console.log("show caption time");
+		document.getElementById("video_caption").innerHTML = currentCap.text;
+	}
+	if (currentCap.end <= currentTime && currentCaptionIdx < subtitleLength - 1) {
+		currentCaptionIdx += 1;
+		console.log("change to next caption");
+		document.getElementById("video_caption").innerHTML = "";
+	}
+	console.log(player.getCurrentTime());
 }
 
 //insert data into html <ul> element
 (function () {
 	var ulElement = document.getElementById("subtitleList"),
-		i, liElement,
-		video = global_videos[urlId]; //video id
-	for (i = 0;i < video.subtitle.length;i++) {
+		i, liElement;
+	for (i = 0;i < currentVideo.subtitle.length;i++) {
 		liElement = document.createElement("li");
-		liElement.innerHTML = video.subtitle[i].text;
+		liElement.innerHTML = currentVideo.subtitle[i].text;
 		ulElement.insertBefore(liElement, null);
 	}
 })();
