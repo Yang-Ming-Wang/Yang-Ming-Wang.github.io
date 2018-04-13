@@ -3,15 +3,24 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/videoPageStyle.css">
 </head>
 <body>
-	<div>
-		<div id="player"></div>
-		<div id="video_caption">initial</div>
+	<div class="container">
+		<div class="row">
+		<div class="col-lg-8">
+			<div>
+				<div id="player"></div>
+				<div id="video_caption">initial</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<table id="subtitleList"></table>
+			<script src="javascript/data.js" ></script>
+			<script src="javascript/control_subtitle.js"></script>
+		</div>
+		</div>
 	</div>
-	<p>下方是字幕</p>
-	<table id="subtitleList"></table>
-	<script src="javascript/data.js" ></script>
-	<script src="javascript/control_subtitle.js"></script>
 </body>
 </html>

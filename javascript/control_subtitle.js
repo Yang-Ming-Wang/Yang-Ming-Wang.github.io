@@ -44,8 +44,7 @@ var	player, currentVideo, previousCaption,
 // after the API code downloads.
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
-		height: '400',
-		width: '50%',
+		width: '100%',
 		videoId: currentVideo.ytVideoId,
 		events: {
 			'onReady': onPlayerReady,
@@ -94,7 +93,7 @@ function onTimeChange() {
 		document.getElementById("video_caption").innerHTML = subtitle[i].text;
 		previousCaption.style.color = "initial";
 		previousCaption = document.getElementById(i);
-		previousCaption.style.color = "red";
+		previousCaption.style.color = "#468847"; //green
 	}
 }
 
