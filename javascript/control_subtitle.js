@@ -17,15 +17,16 @@ var	player, currentVideo, previousCaption,
 	currentVideo = global_videos[urlId];
 })();
 
-//insert data into html <ul> element
+//insert data into html <table> element
 (function () {
 	var ulElement = document.getElementById("subtitleList"),
-		i, liElement;
+		i, trElement;
 	for (i = 0;i < currentVideo.subtitle.length;i++) {
-		liElement = document.createElement("li");
-		liElement.innerHTML = currentVideo.subtitle[i].text;
-		liElement.setAttribute("id",i);
-		ulElement.insertBefore(liElement, null);
+		trElement = document.createElement("tr");
+		trElement.innerHTML = "<td><i class=\"far fa-play-circle\"></i></td>";
+		trElement.innerHTML += "<td>" + currentVideo.subtitle[i].text + "</td>";
+		trElement.setAttribute("id",i);
+		ulElement.insertBefore(trElement, null);
 	}
 	previousCaption = document.getElementById("0");
 })();
