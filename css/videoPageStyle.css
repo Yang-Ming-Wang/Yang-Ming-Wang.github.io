@@ -2,3 +2,8 @@
 	height: 20px;
 	text-align: center;
 }
+#caption_block {
+	height: 350px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
