@@ -1,8 +1,9 @@
-﻿var global_videos = [
+var global_videos = [
 	{
-		"id" : 1,
-		"ytVideoId" : "fGPPfZIvtCw",
-		"subtitle" : [
+		"id": 1,
+		"ytVideoId": "fGPPfZIvtCw",
+		"title": "功夫熊貓三 官方預告片#2",
+		"subtitle": [
 			{
 				"start": 10.28,
 				"end": 11.5,
@@ -334,6 +335,7 @@
 	{
 		"id" : 2,
 		"ytVideoId" : "10r9ozshGVE",
+		"title": "功夫熊貓三 官方預告片#1",
 		"subtitle": [
 		  {
 			"start": 8.78,

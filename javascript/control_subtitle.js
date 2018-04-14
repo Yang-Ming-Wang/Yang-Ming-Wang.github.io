@@ -55,8 +55,7 @@ function onYouTubeIframeAPIReady() {
 
 
 function onPlayerReady(event) {
-	console.log("player ready");
-	//event.target.playVideo();
+	document.getElementById("video_title").innerHTML = currentVideo.title;
 }
 
 function onPlayerStateChange(event) {
