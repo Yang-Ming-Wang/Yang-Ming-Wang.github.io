@@ -46,11 +46,11 @@ var global_videos = [
 			},
 			{
 				"start": 30.7,
-				"end": 33.72,
+				"end": 33.95,
 				"text": "PO: Oh no! It's the dragon teacher! He's so handsome!"
 			},
 			{
-				"start": 33.72,
+				"start": 34.1,
 				"end": 35.199,
 				"text": "WA-TAIIII!"
 			},
@@ -101,11 +101,11 @@ var global_videos = [
 			},
 			{
 				"start": 61.44,
-				"end": 62.559,
+				"end": 62.7,
 				"text": "LI: Come with me."
 			},
 			{
-				"start": 62.56,
+				"start": 63,
 				"end": 65.68,
 				"text": "There's a secret panda village in the mountains."
 			},

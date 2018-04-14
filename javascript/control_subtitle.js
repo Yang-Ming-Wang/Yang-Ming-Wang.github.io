@@ -1,5 +1,6 @@
 var	player, currentVideo, previousCaption,
-	timeInterval = null;
+	timeInterval = null, clickCaption = null
+	captionEnd = 0;
 
 
 (function () {
@@ -17,6 +18,27 @@ var	player, currentVideo, previousCaption,
 	currentVideo = global_videos[urlId];
 })();
 
+function jumpToSubTime(subtitle) {
+	player.seekTo(subtitle.start,true);
+	player.playVideo();
+
+	if (clickCaption !== null) {
+		clearInterval(clickCaption);
+	}
+	captionEnd = subtitle.end;
+	clickCaption = setInterval(checkPlayedCaptionEnd,50);
+}
+
+
+function checkPlayedCaptionEnd() {
+	if (player.getCurrentTime() >= captionEnd) {
+		player.pauseVideo();
+		clearInterval(clickCaption);
+		clickCaption = null;
+	}
+}
+
+
 //insert data into html <table> element
 (function () {
 	var ulElement = document.getElementById("subtitleList"),
@@ -27,6 +49,10 @@ var	player, currentVideo, previousCaption,
 		trElement.innerHTML += "<td>" + currentVideo.subtitle[i].text + "</td>";
 		trElement.setAttribute("id",i);
 		ulElement.insertBefore(trElement, null);
+		(function (){
+			var subtitle = currentVideo.subtitle[i];
+			trElement.addEventListener("click", function (){jumpToSubTime(subtitle);});
+		})();
 	}
 	previousCaption = document.getElementById("0");
 })();
@@ -68,10 +94,18 @@ function onPlayerStateChange(event) {
 		case YT.PlayerState.PAUSED:
 			clearInterval(timeInterval);
 			timeInterval = null;
+			if (clickCaption !== null) {
+				clearInterval(clickCaption);
+				clickCaption = null;
+			}
 			break;
 		case YT.PlayerState.ENDED:
 			clearInterval(timeInterval);
 			timeInterval = null;
+			if (clickCaption !== null) {
+				clearInterval(clickCaption);
+				clickCaption = null;
+			}
 			break;
 	}
 }
