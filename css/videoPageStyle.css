@@ -1,9 +1,19 @@
+body {
+	background-color:#3c3c3c;
+}
+td {
+	vertical-align: top;
+	padding: 5px;
+}
 #video_caption {
 	height: 20px;
 	text-align: center;
+	background-color: white;
+	margin-bottom: 10px;
 }
 #caption_block {
 	height: 350px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	background-color: white;
 }
