@@ -508,5 +508,282 @@ var global_videos = [
 			"text": "[music]"
 		  }
 		]
+	},
+	{
+		"id": 3,
+		"ytVideoId": "yqN7nHM1YTA",
+		"title": "功夫熊貓三 官方預告片#3",
+		"subtitle": [
+		  {
+			"start": 1.68,
+			"end": 4.66,
+			"text": "SHIFU: Po. You must take the next step on your journey."
+		  },
+		  {
+			"start": 6.34,
+			"end": 8.58,
+			"text": "Incredible power awaits you."
+		  },
+		  {
+			"start": 11,
+			"end": 12.28,
+			"text": "PO: Haii! JUSTICE"
+		  },
+		  {
+			"start": 12.38,
+			"end": 14.32,
+			"text": "is about to be served."
+		  },
+		  {
+			"start": 15.96,
+			"end": 19.08,
+			"text": "PO: We'll have two justice platters please. Tigress did you want extra sauce with that?"
+		  },
+		  {
+			"start": 19.08,
+			"end": 19.84,
+			"text": "MONKEY: She wants it on the side."
+		  },
+		  {
+			"start": 19.98,
+			"end": 20.7,
+			"text": "TIGRESS: On the side."
+		  },
+		  {
+			"start": 20.7,
+			"end": 21.34,
+			"text": "PO: On the side."
+		  },
+		  {
+			"start": 22.54,
+			"end": 26.6,
+			"text": "SHIFU: If you only do what you can do, you will never be more than you are now."
+		  },
+		  {
+			"start": 27.48,
+			"end": 28.76,
+			"text": "PO: I like who I am!"
+		  },
+		  {
+			"start": 28.98,
+			"end": 31.54,
+			"text": "SHIFU: You don't even know who you are."
+		  },
+		  {
+			"start": 33.04,
+			"end": 35.08,
+			"text": "LI: I'm looking for my son."
+		  },
+		  {
+			"start": 35.7,
+			"end": 36.52,
+			"text": "PO: Dad??"
+		  },
+		  {
+			"start": 36.58,
+			"end": 38.02,
+			"text": "LI: Give your old man a hug!"
+		  },
+		  {
+			"start": 39.74,
+			"end": 41.9,
+			"text": "MR. PING: How do we know he's even related to you?"
+		  },
+		  {
+			"start": 41.92,
+			"end": 45.6,
+			"text": "LI: Look at that! It's like looking in a fat mirror."
+		  },
+		  {
+			"start": 46.58,
+			"end": 47.68,
+			"text": "LI: Come home with me."
+		  },
+		  {
+			"start": 47.82,
+			"end": 48.62,
+			"text": "PO: Whoa..."
+		  },
+		  {
+			"start": 48.62,
+			"end": 49.94,
+			"text": "MEI MEI: Hi, I'm Mei Mei."
+		  },
+		  {
+			"start": 50.98,
+			"end": 54.58,
+			"text": "LI: You must rediscover what it is to be a panda."
+		  },
+		  {
+			"start": 59.74,
+			"end": 60.28,
+			"text": "LI: There, There."
+		  },
+		  {
+			"start": 60.28,
+			"end": 61.18,
+			"text": "PO: I'm fine, I'm fine"
+		  },
+		  {
+			"start": 62.42,
+			"end": 63.04,
+			"text": "LI: There you go."
+		  },
+		  {
+			"start": 65.98,
+			"end": 68.18,
+			"text": "KAI: Kai has returned!"
+		  },
+		  {
+			"start": 68.64,
+			"end": 69.32,
+			"text": "FARMERS: Who?"
+		  },
+		  {
+			"start": 69.42,
+			"end": 70.88,
+			"text": "KAI: The master of pain. Beast of vengeance."
+		  },
+		  {
+			"start": 70.9,
+			"end": 72.18,
+			"text": "Maker of widows..."
+		  },
+		  {
+			"start": 72.18,
+			"end": 74.26,
+			"text": "Okay, I used to work with Oogway"
+		  },
+		  {
+			"start": 74.7,
+			"end": 76.08,
+			"text": "FARMERS: Oh, Master Oogway!"
+		  },
+		  {
+			"start": 76.22,
+			"end": 76.9,
+			"text": "KAI: Silence!"
+		  },
+		  {
+			"start": 78.86,
+			"end": 80.7,
+			"text": "OOGWAY: You must save the world."
+		  },
+		  {
+			"start": 81.52,
+			"end": 82.66,
+			"text": "PO: There's no way I can stop him!"
+		  },
+		  {
+			"start": 82.9,
+			"end": 84.66,
+			"text": "LI: Unless you had an army of your own."
+		  },
+		  {
+			"start": 84.66,
+			"end": 86.48,
+			"text": "PO: You don't even know kung fu."
+		  },
+		  {
+			"start": 86.5,
+			"end": 87.94,
+			"text": "LI: Then you will teach us."
+		  },
+		  {
+			"start": 91.86,
+			"end": 93.56,
+			"text": "PO: Nobody said this was gonna be easy."
+		  },
+		  {
+			"start": 94.52,
+			"end": 96.48,
+			"text": "PO: I'm gonna turn you into kung fu masters."
+		  },
+		  {
+			"start": 97.08,
+			"end": 97.9,
+			"text": "PO: My tenders!"
+		  },
+		  {
+			"start": 99.22,
+			"end": 101.4,
+			"text": "PO: The dumpling squadron will take position here"
+		  },
+		  {
+			"start": 101.52,
+			"end": 102.4,
+			"text": "on my signal."
+		  },
+		  {
+			"start": 104.58,
+			"end": 105.82,
+			"text": "PO: The noodle squadron will..."
+		  },
+		  {
+			"start": 108.86,
+			"end": 110.3,
+			"text": "This is the spot where..."
+		  },
+		  {
+			"start": 111.64,
+			"end": 113.24,
+			"text": "Okay, I saw that coming."
+		  },
+		  {
+			"start": 114.6,
+			"end": 117.04,
+			"text": "KAI: This was the one destined to stop me?"
+		  },
+		  {
+			"start": 117.04,
+			"end": 118.6,
+			"text": "PO: How bout you spare me the chitchat?"
+		  },
+		  {
+			"start": 118.7,
+			"end": 119.74,
+			"text": "KAI: I'm going to take your-"
+		  },
+		  {
+			"start": 119.74,
+			"end": 120.48,
+			"text": "PO: Chit chat."
+		  },
+		  {
+			"start": 120.54,
+			"end": 121.04,
+			"text": "KAI: In the-"
+		  },
+		  {
+			"start": 121.12,
+			"end": 123.28,
+			"text": "PO: Chitty chitty chat chat chat chat chat."
+		  },
+		  {
+			"start": 124.2,
+			"end": 124.7,
+			"text": "KAI: In the-"
+		  },
+		  {
+			"start": 124.76,
+			"end": 125.26,
+			"text": "PO: Chit chat."
+		  },
+		  {
+			"start": 130.98,
+			"end": 132.82,
+			"text": "PO: This is Master Flying Rhino's battle armor!"
+		  },
+		  {
+			"start": 132.82,
+			"end": 134.74,
+			"text": "LI: Wonder what this does. I should pull it."
+		  },
+		  {
+			"start": 142.54,
+			"end": 143.82,
+			"text": "PO: I think I just peed a little."
+		  }
+		]
 	}
 ];
