@@ -19,14 +19,14 @@ var	player, currentVideo, previousCaption,
 })();
 
 function jumpToSubTime(subtitle) {
-	player.seekTo(subtitle.start,true);
+	player.seekTo(subtitle.start, true);
 	player.playVideo();
 
 	if (clickCaption !== null) {
 		clearInterval(clickCaption);
 	}
 	captionEnd = subtitle.end;
-	clickCaption = setInterval(checkPlayedCaptionEnd,50);
+	clickCaption = setInterval(checkPlayedCaptionEnd, 50);
 }
 
 
@@ -43,11 +43,11 @@ function checkPlayedCaptionEnd() {
 (function () {
 	var ulElement = document.getElementById("subtitleList"),
 		i, trElement;
-	for (i = 0;i < currentVideo.subtitle.length;i++) {
+	for (i = 0; i < currentVideo.subtitle.length; i++) {
 		trElement = document.createElement("tr");
 		trElement.innerHTML = "<td><i class=\"far fa-play-circle\"></i></td>";
 		trElement.innerHTML += "<td>" + currentVideo.subtitle[i].text + "</td>";
-		trElement.setAttribute("id",i);
+		trElement.setAttribute("id", i);
 		ulElement.insertBefore(trElement, null);
 		(function (){
 			var subtitle = currentVideo.subtitle[i];
@@ -87,8 +87,8 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
 	switch (event.data) {
 		case YT.PlayerState.PLAYING:
-			if (timeInterval == null) {
-				timeInterval = setInterval(onTimeChange,500);
+			if (timeInterval === null) {
+				timeInterval = setInterval(onTimeChange, 250);
 			}
 			break;
 		case YT.PlayerState.PAUSED:

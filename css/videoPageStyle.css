@@ -8,7 +8,7 @@ td {
 	padding: 5px;
 }
 
-td:hover {
+tr:hover {
 	cursor: pointer;
 	color: green;
 }
